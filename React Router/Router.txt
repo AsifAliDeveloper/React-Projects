@@ -1,0 +1,78 @@
+1️⃣ What is React Router?
+
+React Router is a library for React that lets you handle navigation between different components/pages in a React app without reloading the whole page.
+
+Normally, in a website, when you click a link, the browser reloads the page.
+
+In React apps, we usually want a Single Page Application (SPA) where navigation happens smoothly without full page reloads.
+
+React Router gives you tools to do this.
+
+2️⃣ How React Router works
+
+React Router works by changing what React renders based on the URL. It uses the History API in the browser to manipulate the URL without reloading the page.
+
+Key concepts:
+
+Concept	What it does
+<BrowserRouter>	Wraps your app and enables routing using browser history (pretty URLs)
+<Routes>	A container for your route definitions
+<Route>	Defines a path and which component to render for that path
+<Link>	Like <a>, but changes URL without reloading the page
+useNavigate	Hook to programmatically navigate to another route
+
+3️⃣ Why use React Router?
+
+SPA experience – No page reloads → smoother, faster navigation.
+
+Dynamic URLs – You can use URLs to display different content (/profile/123).
+
+Nested routes – Complex layouts can have routes inside routes.
+
+Programmatic navigation – Move users around based on actions (useNavigate()).
+
+4️⃣ What happens without React Router?
+
+If you don’t use React Router:
+
+You’d rely on regular HTML links (<a> tags).
+
+Clicking a link reloads the whole page, losing React state.
+
+You cannot easily make a SPA with multiple pages.
+
+URL-based navigation and browser history are harder to manage.
+
+
+1️⃣ Normal HTML Links (no React Router)
+User clicks <a href="/about">
+        |
+        v
+Browser reloads the page
+        |
+        v
+Server sends the /about HTML page
+        |
+        v
+React re-mounts the app from scratch
+
+
+Problem: Full reload → all React state is lost.
+
+2️⃣ React Router (SPA)
+User clicks <Link to="/about">
+        |
+        v
+React Router intercepts the click
+        |
+        v
+URL changes to /about WITHOUT reloading
+        |
+        v
+React renders <About /> component
+        |
+        v
+State and app stay intact
+
+
+Benefit: Smooth navigation → SPA experience, no reloads.
