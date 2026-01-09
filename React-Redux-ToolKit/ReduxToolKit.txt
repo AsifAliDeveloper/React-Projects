@@ -1,0 +1,19 @@
+What is Redux Toolkit?
+
+Redux Toolkit is an official library that:
+    Simplifies Redux setup
+    Uses Immer so you can write “mutating” logic safely
+    Encourages best practices by default
+    Includes async handling tools
+👉 It replaces most old-school Redux patterns.
+
+Core Concepts (RTK way):
+
+1. Store
+The global state container.
+
+2. Slice
+A slice = state + reducers + actions in one file.
+
+3. useSelector & useDispatch
+Hooks to read and update state in React components.
