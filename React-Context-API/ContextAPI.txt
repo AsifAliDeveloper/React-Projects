@@ -1,0 +1,95 @@
+1️⃣ What is Context API?
+
+The Context API is a feature in React that allows you to share data across components without passing props manually at every level.
+
+Normally in React:
+
+If you have data in a parent component and many nested child components need it, you pass it down through props.
+
+This can become annoying and messy, especially if components are deeply nested. This problem is called “prop drilling.”
+
+Context API solves prop drilling by letting you create a global-ish data store that multiple components can access directly.
+
+2️⃣ How does Context API work?
+
+Context API has three main parts:
+
+Create Context
+You create a context using React.createContext().
+
+import React from 'react';
+const MyContext = React.createContext();
+
+
+Provide Context
+Wrap the components that need access to the data with a Provider. The provider has a value prop that passes the data.
+
+<MyContext.Provider value={someData}>
+    <App />
+</MyContext.Provider>
+
+
+Consume Context
+Any component inside the provider can access the data in two ways:
+
+Using useContext hook:
+
+import React, { useContext } from 'react';
+const data = useContext(MyContext);
+
+
+Using Context.Consumer component (less common in modern React):
+
+<MyContext.Consumer>
+  {data => <div>{data}</div>}
+</MyContext.Consumer>
+
+3️⃣ Why use Context API?
+
+Avoid prop drilling: You don’t need to pass props through every component.
+
+Centralized state: Useful for global data like:
+
+User authentication info
+
+Theme (dark/light mode)
+
+Language settings
+
+Cart data in e-commerce apps
+
+Cleaner code: Makes your component tree simpler and more maintainable.
+
+
+✅
+1. General Syntax of Context API
+Step 1: Create Context
+import React, { createContext } from "react";
+
+const MyContext = createContext(defaultValue);
+
+
+defaultValue is optional. It’s used if no Provider wraps the component.
+
+Step 2: Provide Context
+<MyContext.Provider value={/* some value */}>
+  {/* components that need the context */}
+</MyContext.Provider>
+
+
+value is the data you want to share.
+
+All child components inside the Provider can access this data.
+
+Step 3: Consume Context
+Option A: useContext Hook (functional component)
+import { useContext } from "react";
+
+const value = useContext(MyContext);
+
+Option B: Context.Consumer (class component)
+<MyContext.Consumer>
+  {value => (
+    <div>{value}</div>
+  )}
+</MyContext.Consumer>
