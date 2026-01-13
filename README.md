@@ -5,3 +5,4 @@ Here, i upload React Task, and Projects
 # React Router
 # Context API
 # React Redux
+# React Query
