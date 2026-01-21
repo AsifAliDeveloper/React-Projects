@@ -3,6 +3,7 @@
 Here, i upload React Task, and Projects
 
 # React State
+# Profile Card (props)
 # React Router
 # Context API
 # React Redux
